@@ -4,7 +4,7 @@
 </script>
 
 <main>
-  <Modal />
+  <Modal message="Ini adalah pesan dari props" isPromo={true} />
   <Latihan />
 </main>
 
