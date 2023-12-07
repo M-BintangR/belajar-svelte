@@ -1,36 +1,49 @@
 <script>
-  let name = "Muhammad Bintang";
-  let firstName = "Muhammad";
-  let lastName = "Bintang";
-  let beltColour = "Black";
+  //   let name = "Muhammad Bintang";
+  //   let firstName = "Muhammad";
+  //   let lastName = "Bintang";
+  //   let beltColour = "Black";
 
-  $: fullName = `${firstName} ${lastName}`; // Reactive value
+  let people = [
+    { name: "Bintang", beltColour: "black", age: 19, id: 1 },
+    { name: "Fery", beltColour: "black", age: 19, id: 2 },
+    { name: "Salim", beltColour: "black", age: 19, id: 3 },
+  ];
 
-  $: {
-    console.log(beltColour);
-    console.log(fullName);
-  }
+  //   $: fullName = `${firstName} ${lastName}`; // Reactive value
 
-  const handleClick = () => {
-    beltColour = "Orange";
-  };
-  ue;
+  //   $: {
+  //     console.log(beltColour);
+  //     console.log(fullName);
+  //   }
 
-  const handleInput = (e) => {
-    beltColour = e.target.value;
-  };
+  //   const handleClick = () => {
+  //     beltColour = "Orange";
+  //   };
+
+  //   const handleInput = (e) => {
+  //     beltColour = e.target.value;
+  //   };
 </script>
 
 <main>
-  <p style="color: {beltColour};">
+  {#each people as person (person.id)}
+    <div>
+      <h4>{person.name}</h4>
+      <p>{person.age} years old, {person.beltColour} belt.</p>
+    </div>
+  {:else}
+    <p>There are not people to show...</p>
+  {/each}
+  <!-- <p style="color: {beltColour};">
     {fullName}
     {beltColour} belt
-  </p>
+  </p> -->
   <!-- <button on:click={handleClick}>Update Color</button> -->
   <!-- <input type="text" on:input={handleInput} value={beltColour} /> -->
-  <input type="text" bind:value={firstName} />
+  <!-- <input type="text" bind:value={firstName} />
   <input type="text" bind:value={lastName} />
-  <input type="text" bind:value={beltColour} />
+  <input type="text" bind:value={beltColour} /> -->
 </main>
 
 <style>
@@ -39,13 +52,6 @@
     padding: 1em;
     max-width: 240px;
     margin: 0 auto;
-  }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
   }
 
   @media (min-width: 640px) {
