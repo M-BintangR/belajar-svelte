@@ -24,6 +24,10 @@
   //   const handleInput = (e) => {
   //     beltColour = e.target.value;
   //   };
+
+  const deleteData = (id) => {
+    people = people.filter((person) => person.id !== id);
+  };
 </script>
 
 <main>
@@ -31,6 +35,7 @@
     <div>
       <h4>{person.name}</h4>
       <p>{person.age} years old, {person.beltColour} belt.</p>
+      <button on:click={deleteData(person.id)}>Delete Data</button>
     </div>
   {:else}
     <p>There are not people to show...</p>
