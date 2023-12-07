@@ -28,13 +28,28 @@
   const deleteData = (id) => {
     people = people.filter((person) => person.id !== id);
   };
+
+  let num = 5;
 </script>
+
+{#if num > 20}
+  <p>Number 20</p>
+{:else if num > 5}
+  <p>Number 5</p>
+{:else}
+  <p>Data Number 20 Or 5</p>
+{/if}
 
 <main>
   {#each people as person (person.id)}
     <div>
       <h4>{person.name}</h4>
       <p>{person.age} years old, {person.beltColour} belt.</p>
+      {#if person.beltColour == "black"}
+        <p><strong>BLACK</strong></p>
+      {:else}
+        <p><strong>NOT BLACK</strong></p>
+      {/if}
       <button on:click={deleteData(person.id)}>Delete Data</button>
     </div>
   {:else}
