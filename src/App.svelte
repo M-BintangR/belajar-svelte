@@ -1,10 +1,22 @@
 <script>
   import Latihan from "./Latihan.svelte";
   import Modal from "./Modal.svelte";
+
+  let showModal = false;
+
+  const openModal = () => {
+    showModal = !showModal;
+  };
 </script>
 
 <main>
-  <Modal message="Ini adalah pesan dari props" isPromo={true} />
+  <button on:click={openModal}>Open Modal</button>
+  <Modal
+    message="Ini adalah pesan dari props"
+    isPromo={true}
+    {showModal}
+    on:click={openModal}
+  />
   <Latihan />
 </main>
 
