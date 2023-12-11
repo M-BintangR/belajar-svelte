@@ -7,7 +7,8 @@
 {#if showModal}
   <div class="backdrop" on:click|self>
     <div class="modal" class:promo={isPromo}>
-      <p>{message}</p>
+      <slot name="title" />
+      <slot />
     </div>
   </div>
 {/if}

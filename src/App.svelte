@@ -10,13 +10,23 @@
 </script>
 
 <main>
-  <button on:click|once={openModal}>Open Modal</button>
+  <button on:click={openModal}>Open Modal</button>
   <Modal
     message="Ini adalah pesan dari props"
     isPromo={true}
     {showModal}
     on:click={openModal}
-  />
+  >
+    <div slot="title">
+      <h3>Add a New Person</h3>
+    </div>
+    
+    <form action="">
+      <input type="text" placeholder="Name" />
+      <input type="text" placeholder="Belt Colour" />
+      <button>Add Person</button>
+    </form>
+  </Modal>
   <Latihan />
 </main>
 
