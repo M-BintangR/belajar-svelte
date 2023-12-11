@@ -5,8 +5,20 @@
 
   let showModal = false;
 
+  let people = [
+    { name: "Bintang", beltColour: "black", age: 19, id: 1 },
+    { name: "Fery", beltColour: "black", age: 19, id: 2 },
+    { name: "Salim", beltColour: "black", age: 19, id: 3 },
+  ];
+
   const openModal = () => {
     showModal = !showModal;
+  };
+
+  const addPerson = (e) => {
+    const person = e.detail;
+    people = [person, ...people];
+    showModal = false;
   };
 </script>
 
@@ -21,9 +33,9 @@
     <div slot="title">
       <h3>Add a New Person</h3>
     </div>
-    <AddPersonForm />
+    <AddPersonForm on:addPerson={addPerson} />
   </Modal>
-  <Latihan />
+  <Latihan {people} />
 </main>
 
 <style>
