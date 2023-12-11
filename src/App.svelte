@@ -10,7 +10,7 @@
 </script>
 
 <main>
-  <button on:click={openModal}>Open Modal</button>
+  <button on:click|once={openModal}>Open Modal</button>
   <Modal
     message="Ini adalah pesan dari props"
     isPromo={true}
