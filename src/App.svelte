@@ -1,4 +1,5 @@
 <script>
+  import AddPersonForm from "./AddPersonForm.svelte";
   import Latihan from "./Latihan.svelte";
   import Modal from "./Modal.svelte";
 
@@ -20,12 +21,7 @@
     <div slot="title">
       <h3>Add a New Person</h3>
     </div>
-    
-    <form action="">
-      <input type="text" placeholder="Name" />
-      <input type="text" placeholder="Belt Colour" />
-      <button>Add Person</button>
-    </form>
+    <AddPersonForm />
   </Modal>
   <Latihan />
 </main>

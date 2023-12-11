@@ -4,7 +4,7 @@
   //   let lastName = "Bintang";
   //   let beltColour = "Black";
 
-  let people = [
+  export let people = [
     { name: "Bintang", beltColour: "black", age: 19, id: 1 },
     { name: "Fery", beltColour: "black", age: 19, id: 2 },
     { name: "Salim", beltColour: "black", age: 19, id: 3 },
